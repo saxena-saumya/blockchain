@@ -69,10 +69,10 @@ class BlockChain:
 if __name__ == '__main__':
   fbl1 = Block(1,"BootStrapBlock",'000000000000000000000000000000000000000000000000000000000000')
   bc = BlockChain( fbl1 )
-  bc.addBlock('Saumya Saksena')
-  bc.addBlock('Sameer Saksena')
+  bc.addBlock('Saumya Saxena')
+  bc.addBlock('Sameer Saxena')
   bc.print()
-  bc.modifyBlock(2, 'Anju Saksena')
+  bc.modifyBlock(2, 'Anju Saxena')
   bc.print()
   bc.mineTheBlock(2)
   bc.print()
