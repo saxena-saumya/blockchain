@@ -1,6 +1,6 @@
 import hashlib as hasher
 
-class Block:                                    #function to create a new block 
+class Block:                                    #class of a block 
   def __init__(self, index, data, previous_hash):
     self.index = index
     self.data = data
