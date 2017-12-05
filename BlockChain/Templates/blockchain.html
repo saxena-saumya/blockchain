@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<table>
+  <tr>
+    {% for bl in bc.chain %}
+    <td>
+      {% if (bl.legit) %} 
+        <table bgcolor="#7FFFD4">
+        {% else %}
+        <table bgcolor="#E9967A">
+        {% endif %}
+        <tr><td> Block: <textarea cols="50" rows="1"> {{ bl.index }} </textarea></td></tr>
+        <tr><td> Nonce: <textarea cols="50" rows="1"> {{ bl.nonce }} </textarea></td></tr>
+        <tr><td> Data: <textarea cols="50" rows="1"> {{ bl.data }}  </textarea></td></tr>
+        <tr><td> Hash: <textarea cols="50" rows="2"> {{ bl.hash }}  </textarea></td></tr>
+        <tr><td><form action=/modifyblock > Modify the Block<input type = "text" name = "editblocktext" id = "editblocktext">
+        <input id="blockIndex" name="blockIndex" type="hidden" value={{bl.index}}>
+        <input type = "submit" value = "Update"></form></td></tr>
+        <tr><td><form action=/mineblock/{{bl.index}} ><P> <input type = "submit" value = "Mine"> </P></form></td></tr>
+      </table>
+    </td>
+    {% endfor %}
+  </tr>
+  <tr>
+    <td>
+    <form action=/addblock >
+    <P> Add Block <input type = "text" name = "addblocktext" id = "AddText"> </P>
+    <input type = "submit" value = "Add Block">
+    </form>
+  </td>
+  </tr>
+</table>
+</body>
+</html>
